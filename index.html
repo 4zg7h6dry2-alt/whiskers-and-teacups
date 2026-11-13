@@ -1,110 +1,116 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whiskers & Teacups</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whiskers &amp; Teacups — Cat Café Simulation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <header class="topbar">
-    <div class="brand">
-      <span>🐈</span>
-      <div>
-        <h1>Whiskers & Teacups</h1>
-        <p>A little café full of mischief</p>
+  <div class="game-viewport">
+    <!-- Top Status Bar -->
+    <header class="top-status-bar">
+      <div class="resource-badge">
+        <span class="icon">🐾</span>
+        <span class="value">1,250</span>
+        <button class="add-btn">+</button>
       </div>
-    </div>
-
-    <div class="cafe-stats">
-      <span>🪙 <b id="coins">100</b></span>
-      <span>☀️ Day <b id="day">1</b></span>
-    </div>
-  </header>
-
-  <main class="game-layout">
-
-    <section class="cafe">
-      <div class="cafe-heading">
-        <div>
-          <h2>The Café</h2>
-          <p>Welcome to your little corner of the world.</p>
-        </div>
-        <span class="open-sign">OPEN</span>
+      <div class="resource-badge">
+        <span class="icon">🫖</span>
+        <span class="value">25</span>
+        <button class="add-btn">+</button>
       </div>
+      <div class="level-badge">
+        <span class="level-text">Lv. 1</span>
+        <div class="exp-bar"><div class="exp-fill" style="width: 30%;"></div></div>
+      </div>
+    </header>
 
-      <div class="cafe-room">
-
-        <div class="window">
-          <span>☁️</span>
-          <span>🌿</span>
-          <span>☀️</span>
+    <!-- Main Game Window Content -->
+    <main class="cafe-stage">
+      
+      <!-- Left Navigation Menu -->
+      <nav class="main-menu-panel">
+        <div class="brand-header">
+          <div class="ribbon-bow">🎀</div>
+          <h1>Whiskers &amp; Teacups</h1>
+          <p class="subtitle">♥ Cat Café ♥</p>
         </div>
 
-        <div class="decorations">
-          🌷 🪴 🌼 🪴 🌷
-        </div>
+        <ul class="menu-buttons">
+          <li><button class="nav-btn active" data-action="play">▶ Play</button></li>
+          <li><button class="nav-btn" data-action="decorate">🪑 Decorate</button></li>
+          <li><button class="nav-btn" data-action="collect">🐾 Collect Cats</button></li>
+          <li><button class="nav-btn" data-action="recipes">📖 Recipes</button></li>
+          <li><button class="nav-btn" data-action="settings">⚙ Settings</button></li>
+          <li><button class="nav-btn quit-btn" data-action="quit">🚪 Quit</button></li>
+        </ul>
+      </nav>
 
-        <div class="counter">
-          <span>☕</span>
-          <span>🍰</span>
-          <span>🫖</span>
-          <p>The Little Counter</p>
-        </div>
-
-        <div class="cafe-cats">
-          <div class="cat">
-            <span>🐈</span>
-            <small>Butler Oliver</small>
-          </div>
-
-          <div class="cat">
-            <span>🐈‍⬛</span>
-            <small>Madame Miso</small>
-          </div>
-
-          <div class="cat">
-            <span>🐈</span>
-            <small>Sir Biscuit</small>
+      <!-- Center Café Atmosphere & Butler Showcase -->
+      <section class="cafe-interior">
+        <div class="background-decor">
+          <div class="chalkboard-sign">
+            <h3>Good Tea</h3>
+            <p>Happy Cats</p>
+            <span class="quote">A cozy life ♡</span>
           </div>
         </div>
 
-        <div class="tables">
-          <div class="table">🪑 🍵</div>
-          <div class="table">🪑 🥐</div>
+        <!-- The Three Cat Butlers Counter Display -->
+        <div class="butlers-row">
+          <!-- Oliver -->
+          <div class="butler-card">
+            <div class="sprite-container oliver-sprite">🐈‍⬛</div>
+            <div class="nameplate">
+              <strong>Oliver</strong>
+              <span>Head Butler ♡</span>
+            </div>
+          </div>
+
+          <!-- Miso -->
+          <div class="butler-card">
+            <div class="sprite-container miso-sprite">🐈‍⬛</div>
+            <div class="nameplate">
+              <strong>Miso</strong>
+              <span>Tea Specialist ♡</span>
+            </div>
+          </div>
+
+          <!-- Biscuit -->
+          <div class="butler-card">
+            <div class="sprite-container biscuit-sprite">🐈</div>
+            <div class="nameplate">
+              <strong>Biscuit</strong>
+              <span>Pastry Butler ♡</span>
+            </div>
+          </div>
         </div>
 
-      </div>
-    </section>
+        <!-- Foreground Resident Cat Sleeping Spot -->
+        <div class="resident-cat-spot">
+          <div class="cat-bed">
+            <span class="sleeping-cat">🐈</span>
+            <span class="zzr">Z z z</span>
+          </div>
+        </div>
 
-    <aside class="side-panel">
-      <h2>Today's Orders</h2>
-      <div id="orders">
-        <p>No customers yet...</p>
-      </div>
+      </section>
 
-      <button id="new-order">Welcome a Customer</button>
+    </main>
+  </div>
 
-      <h2>The Kitchen</h2>
-      <div class="kitchen">
-        <button class="drink" data-drink="Tea">🫖 Tea</button>
-        <button class="drink" data-drink="Coffee">☕ Coffee</button>
-        <button class="drink" data-drink="Hot Chocolate">🍫 Hot Chocolate</button>
-      </div>
-
-      <p id="message">Your café is waiting for its first guest.</p>
-    </aside>
-
-  </main>
-
-  <footer>
-    Made with love, whiskers and a little chaos.
-  </footer>
-
-  <script src="script.js"></script>
+  <script>
+    // Simple interactivity placeholder for menu buttons
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
-
