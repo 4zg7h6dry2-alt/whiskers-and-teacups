@@ -1,1 +1,110 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whiskers & Teacups</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span>🐈</span>
+      <div>
+        <h1>Whiskers & Teacups</h1>
+        <p>A little café full of mischief</p>
+      </div>
+    </div>
+
+    <div class="cafe-stats">
+      <span>🪙 <b id="coins">100</b></span>
+      <span>☀️ Day <b id="day">1</b></span>
+    </div>
+  </header>
+
+  <main class="game-layout">
+
+    <section class="cafe">
+      <div class="cafe-heading">
+        <div>
+          <h2>The Café</h2>
+          <p>Welcome to your little corner of the world.</p>
+        </div>
+        <span class="open-sign">OPEN</span>
+      </div>
+
+      <div class="cafe-room">
+
+        <div class="window">
+          <span>☁️</span>
+          <span>🌿</span>
+          <span>☀️</span>
+        </div>
+
+        <div class="decorations">
+          🌷 🪴 🌼 🪴 🌷
+        </div>
+
+        <div class="counter">
+          <span>☕</span>
+          <span>🍰</span>
+          <span>🫖</span>
+          <p>The Little Counter</p>
+        </div>
+
+        <div class="cafe-cats">
+          <div class="cat">
+            <span>🐈</span>
+            <small>Butler Oliver</small>
+          </div>
+
+          <div class="cat">
+            <span>🐈‍⬛</span>
+            <small>Madame Miso</small>
+          </div>
+
+          <div class="cat">
+            <span>🐈</span>
+            <small>Sir Biscuit</small>
+          </div>
+        </div>
+
+        <div class="tables">
+          <div class="table">🪑 🍵</div>
+          <div class="table">🪑 🥐</div>
+        </div>
+
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <h2>Today's Orders</h2>
+      <div id="orders">
+        <p>No customers yet...</p>
+      </div>
+
+      <button id="new-order">Welcome a Customer</button>
+
+      <h2>The Kitchen</h2>
+      <div class="kitchen">
+        <button class="drink" data-drink="Tea">🫖 Tea</button>
+        <button class="drink" data-drink="Coffee">☕ Coffee</button>
+        <button class="drink" data-drink="Hot Chocolate">🍫 Hot Chocolate</button>
+      </div>
+
+      <p id="message">Your café is waiting for its first guest.</p>
+    </aside>
+
+  </main>
+
+  <footer>
+    Made with love, whiskers and a little chaos.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
