@@ -1,62 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Whiskers &amp; Teacups — Cat Café Simulation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <div class="game-viewport">
-    <!-- Top Status Bar -->
-    <header class="top-status-bar">
-      <div class="resource-badge">
-        <span class="icon">🐾</span>
-        <span class="value">1,250</span>
-        <button class="add-btn">+</button>
-      </div>
-      <div class="resource-badge">
-        <span class="icon">🫖</span>
-        <span class="value">25</span>
-        <button class="add-btn">+</button>
-      </div>
-      <div class="level-badge">
-        <span class="level-text">Lv. 1</span>
-        <div class="exp-bar"><div class="exp-fill" style="width: 30%;"></div></div>
-      </div>
-    </header>
-
-    <!-- Main Game Window Content -->
-    <main class="cafe-stage">
-      
-      <!-- Left Navigation Menu -->
-      <nav class="main-menu-panel">
-        <div class="brand-header">
-          <div class="ribbon-bow">🎀</div>
-          <h1>Whiskers &amp; Teacups</h1>
-          <p class="subtitle">♥ Cat Café ♥</p>
-        </div>
-
-        <ul class="menu-buttons">
-          <li><button class="nav-btn active" data-action="play">▶ Play</button></li>
-          <li><button class="nav-btn" data-action="decorate">🪑 Decorate</button></li>
-          <li><button class="nav-btn" data-action="collect">🐾 Collect Cats</button></li>
-          <li><button class="nav-btn" data-action="recipes">📖 Recipes</button></li>
-          <li><button class="nav-btn" data-action="settings">⚙ Settings</button></li>
-          <li><button class="nav-btn quit-btn" data-action="quit">🚪 Quit</button></li>
-        </ul>
-      </nav>
-
-      <!-- Center Café Atmosphere & Butler Showcase -->
+      <!-- Center Café Atmosphere & Room Stage -->
       <section class="cafe-interior">
-        <div class="background-decor">
+        
+        <!-- Background Room Layer -->
+        <div class="room-background">
+          <!-- Arched Window Overlooking the Town -->
+          <div class="scenic-window">
+            <div class="window-pane"></div>
+          </div>
+
+          <!-- Chalkboard Sign -->
           <div class="chalkboard-sign">
             <h3>Good Tea</h3>
             <p>Happy Cats</p>
             <span class="quote">A cozy life ♡</span>
+          </div>
+
+          <!-- Shelves & Pastry Display Counter (Background) -->
+          <div class="shelf-backdrop"></div>
+          <div class="pastry-display-case">
+            <span class="placeholder-pastry">🍰</span>
+            <span class="placeholder-pastry">🧁</span>
           </div>
         </div>
 
@@ -64,7 +27,9 @@
         <div class="butlers-row">
           <!-- Oliver -->
           <div class="butler-card">
-            <div class="sprite-container oliver-sprite">🐈‍⬛</div>
+            <div class="pixel-sprite-box">
+              <div class="pixel-cat oliver" role="img" aria-label="Oliver pixel sprite"></div>
+            </div>
             <div class="nameplate">
               <strong>Oliver</strong>
               <span>Head Butler ♡</span>
@@ -73,7 +38,9 @@
 
           <!-- Miso -->
           <div class="butler-card">
-            <div class="sprite-container miso-sprite">🐈‍⬛</div>
+            <div class="pixel-sprite-box">
+              <div class="pixel-cat miso" role="img" aria-label="Miso pixel sprite"></div>
+            </div>
             <div class="nameplate">
               <strong>Miso</strong>
               <span>Tea Specialist ♡</span>
@@ -82,7 +49,9 @@
 
           <!-- Biscuit -->
           <div class="butler-card">
-            <div class="sprite-container biscuit-sprite">🐈</div>
+            <div class="pixel-sprite-box">
+              <div class="pixel-cat biscuit" role="img" aria-label="Biscuit pixel sprite"></div>
+            </div>
             <div class="nameplate">
               <strong>Biscuit</strong>
               <span>Pastry Butler ♡</span>
@@ -90,8 +59,8 @@
           </div>
         </div>
 
-        <!-- Foreground Resident Cat Sleeping Spot -->
-        <div class="resident-cat-spot">
+        <!-- Foreground Resident Cat Sleeping Spot & Floor Area -->
+        <div class="cafe-floor-foreground">
           <div class="cat-bed">
             <span class="sleeping-cat">🐈</span>
             <span class="zzr">Z z z</span>
@@ -99,18 +68,3 @@
         </div>
 
       </section>
-
-    </main>
-  </div>
-
-  <script>
-    // Simple interactivity placeholder for menu buttons
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
-  </script>
-</body>
-</html>
