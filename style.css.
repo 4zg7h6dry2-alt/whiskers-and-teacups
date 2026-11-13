@@ -1,305 +1,67 @@
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
-:root {
-  --cream: #f5ead8;
-  --paper: #fff9ef;
-  --rose: #c98f91;
-  --burgundy: #78434c;
-  --sage: #8b9677;
-  --brown: #59453c;
-  --gold: #c5a36a;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: var(--cream);
-  color: var(--brown);
-  font-family: 'DM Sans', sans-serif;
-  min-height: 100vh;
-  padding: 24px;
-}
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1250px;
-  margin: auto;
-  padding: 18px 24px;
-  background: var(--paper);
-  border: 1px solid #e5d4bd;
-  border-radius: 18px;
-  box-shadow: 0 5px 20px #59453c10;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand > span {
-  font-size: 38px;
-}
-
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-}
-
-.brand h1 {
-  color: var(--burgundy);
-  font-size: 23px;
-}
-
-.brand p {
-  font-size: 12px;
-  color: #967c6b;
-  margin-top: 4px;
-}
-
-.cafe-stats {
-  display: flex;
-  gap: 18px;
-  font-size: 14px;
-}
-
-.game-layout {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 22px;
-  max-width: 1250px;
-  margin: 28px auto;
-}
-
-.cafe, .side-panel {
-  background: var(--paper);
-  border: 1px solid #e5d4bd;
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 8px 24px #59453c0b;
-}
-
-.cafe-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.cafe-heading h2,
-.side-panel h2 {
-  color: var(--burgundy);
-  font-size: 25px;
-}
-
-.cafe-heading p {
-  color: #987f70;
-  font-size: 13px;
-  margin-top: 5px;
-}
-
-.open-sign {
-  background: var(--sage);
-  color: white;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-.cafe-room {
-  min-height: 470px;
-  background: #e9d9c3;
-  border: 8px solid #c5a98b;
-  border-radius: 15px;
-  padding: 25px;
+/* Café Interior Room Atmosphere */
+.cafe-interior {
+  background: linear-gradient(180deg, #EAD9C2 0%, #D8C3A9 100%);
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  padding: 1.5rem;
   overflow: hidden;
+  border-bottom-right-radius: 8px;
 }
 
-.window {
-  width: 150px;
-  height: 115px;
-  background: #d9e6dc;
-  border: 8px solid #a77c60;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 25px;
-}
-
-.decorations {
-  text-align: center;
-  font-size: 25px;
-  letter-spacing: 8px;
-}
-
-.counter {
-  align-self: center;
-  width: 75%;
-  background: #a77960;
-  border: 5px solid #855c47;
-  border-radius: 12px;
-  padding: 14px;
-  text-align: center;
-  color: white;
-  font-size: 27px;
-}
-
-.counter p {
-  font-family: 'Playfair Display', serif;
-  font-size: 16px;
-  margin-top: 5px;
-}
-
-.cafe-cats {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.cat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.cat span {
-  font-size: 43px;
-  animation: catBob 2s ease-in-out infinite;
-}
-
-.cat small {
-  font-size: 10px;
-  color: var(--burgundy);
-  font-weight: 600;
-}
-
-@keyframes catBob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-.tables {
-  display: flex;
-  justify-content: space-around;
-}
-
-.table {
-  background: #f8eee0;
-  border: 2px solid #bd997c;
-  border-radius: 12px;
-  padding: 14px;
-  font-size: 23px;
-}
-
-.side-panel h2 {
-  margin-bottom: 15px;
-  margin-top: 10px;
-}
-
-#orders {
-  background: #f5ead8;
-  border-radius: 12px;
-  padding: 18px;
-  min-height: 65px;
-  margin-bottom: 15px;
-  font-size: 13px;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  transition: 0.2s ease;
-}
-
-#new-order {
-  background: var(--burgundy);
-  color: white;
-  padding: 13px;
+/* Background Room Layer Elements */
+.room-background {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  font-weight: 600;
+  height: 65%;
+  background-color: #3B2B24; /* Warm Victorian wood wall tone */
+  border-bottom: 4px solid var(--antique-gold);
+  padding: 1rem;
 }
 
-button:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.08);
+/* Arched Scenic Window */
+.scenic-window {
+  position: absolute;
+  top: 15px;
+  right: 180px;
+  width: 90px;
+  height: 140px;
+  background: linear-gradient(135deg, #E2B2C1 0%, #C98F91 100%); /* Sunset sky tone */
+  border: 4px solid var(--warm-brown);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
 }
 
-.kitchen {
+/* Pastry Display Counter Frame */
+.pastry-display-case {
+  position: absolute;
+  bottom: -4px;
+  right: 20px;
+  width: 150px;
+  height: 70px;
+  background: rgba(255, 249, 239, 0.15);
+  border: 2px solid var(--antique-gold);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.drink {
-  padding: 13px;
-  background: #f0e4d3;
-  color: var(--brown);
-  text-align: left;
-  border: 1px solid #e2cfb7;
+.placeholder-pastry {
+  font-size: 1.5rem;
+  opacity: 0.8;
 }
 
-#message {
-  margin-top: 20px;
-  padding: 13px;
-  background: #edf0e6;
-  color: #687454;
-  border-radius: 10px;
-  font-size: 12px;
-  line-height: 1.6;
-}
-
-footer {
-  text-align: center;
-  color: #a28c7d;
-  font-size: 12px;
-  padding: 15px;
-}
-
-@media (max-width: 750px) {
-  body {
-    padding: 12px;
-  }
-
-  .topbar {
-    padding: 15px;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  .brand h1 {
-    font-size: 18px;
-  }
-
-  .game-layout {
-    grid-template-columns: 1fr;
-    margin-top: 15px;
-  }
-
-  .cafe, .side-panel {
-    padding: 16px;
-  }
-
-  .cafe-room {
-    min-height: 420px;
-    padding: 15px;
-  }
-
-  .cafe-stats {
-    font-size: 12px;
-  }
+/* Foreground Floor Area */
+.cafe-floor-foreground {
+  position: relative;
+  z-index: 2;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
