@@ -1,261 +1,47 @@
-/* --- Victorian Palette & Base Setup --- */
 :root {
-  --antique-cream: #FFF9EF;
-  --dusty-rose: #C98F91;
-  --burgundy: #78434C;
-  --sage-green: #7A8471;
-  --warm-brown: #59453C;
-  --antique-gold: #C5A36A;
+  /* Your palette */
+  --forest-deep: #1f3a2a;
+  --forest:      #2f5a3c;
+  --forest-soft: #4f8556;
+  --black-soft:  #1a1512;
+  --gold:        #c9a24a;
+  --gold-light:  #e3c677;
+  --cream:       #f4e8cc;
+  --burgundy:    #6e1f2e;
+
+  color-scheme: dark;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
-  background-color: #2C201A;
-  color: var(--warm-brown);
-  font-family: 'Georgia', serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-/* Main Game Window Frame */
-.game-container {
-  width: 720px;
-  height: 520px;
-  background: var(--antique-cream);
-  border: 4px solid var(--antique-gold);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  background: var(--black-soft);
+  color: var(--cream);
+  display: grid;
+  place-items: center;
   overflow: hidden;
+  touch-action: manipulation;
 }
 
-/* Header HUD */
-.game-header {
-  background: var(--burgundy);
-  color: var(--antique-cream);
-  padding: 0.8rem 1.2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 3px solid var(--antique-gold);
-  z-index: 10;
+/* Keeps the room 16:9 and as big as fits, on phone or PC */
+.stage {
+  width: min(100vw, calc(100vh * 16 / 9));
+  width: min(100vw, calc(100dvh * 16 / 9));
+  aspect-ratio: 16 / 9;
+  border: 2px solid var(--gold);
+  box-sizing: border-box;
 }
 
-.status-hud {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 0.9rem;
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.menu-btn {
-  background: var(--antique-cream);
-  color: var(--burgundy);
-  border: 2px solid var(--antique-gold);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: bold;
-  transition: all 0.2s;
-}
-
-.menu-btn:hover {
-  background: var(--antique-gold);
-  color: #FFF;
-}
-
-/* Café Interior Stage */
-.cafe-interior {
-  flex: 1;
-  background: linear-gradient(180deg, #EAD9C2 0%, #D8C3A9 100%);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.5rem;
-  overflow: hidden;
-}
-
-/* Background Room Layer */
-.room-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60%;
-  background-color: #3B2B24;
-  border-bottom: 4px solid var(--antique-gold);
-  padding: 1rem;
-}
-
-/* Scenic Window */
-.scenic-window {
-  position: absolute;
-  top: 15px;
-  right: 40px;
-  width: 80px;
-  height: 120px;
-  background: linear-gradient(135deg, #E2B2C1 0%, #C98F91 100%);
-  border: 4px solid var(--warm-brown);
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-}
-
-/* Chalkboard Sign */
-.chalkboard-sign {
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  background: #241A16;
-  border: 2px solid var(--antique-gold);
-  padding: 0.5rem 1rem;
-  color: var(--antique-cream);
-  text-align: center;
-  font-size: 0.8rem;
-  border-radius: 4px;
-}
-.chalkboard-sign h3 { margin: 0; color: var(--antique-gold); font-size: 0.85rem; }
-.chalkboard-sign p { margin: 2px 0; }
-.chalkboard-sign .quote { font-size: 0.7rem; color: var(--dusty-rose); }
-
-/* Pastry Display Case */
-.pastry-display-case {
-  position: absolute;
-  bottom: -4px;
-  right: 20px;
-  width: 130px;
-  height: 60px;
-  background: rgba(255, 249, 239, 0.15);
-  border: 2px solid var(--antique-gold);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-/* Butlers Row */
-.butlers-row {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.butler-card {
-  background: var(--antique-cream);
-  border: 2px solid var(--antique-gold);
-  border-radius: 8px;
-  padding: 0.5rem;
-  width: 100px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.pixel-sprite-box {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(245, 234, 216, 0.5);
-  border-radius: 4px;
-  margin-bottom: 0.3rem;
-}
-
-.pixel-cat {
-  width: 16px;
-  height: 16px;
-  transform: scale(2.5);
-  image-rendering: pixelated;
-}
-
-.pixel-cat.oliver { box-shadow: 3px 3px 0 #9EAAA2, 6px 6px 0 #78434C; }
-.pixel-cat.miso { box-shadow: 3px 3px 0 #32231F, 6px 6px 0 #C98F91; }
-.pixel-cat.biscuit { box-shadow: 3px 3px 0 #AC573F, 6px 6px 0 #FFF9EF; }
-
-.nameplate strong {
+/* Crisp pixel art, no blurring when scaled up */
+canvas {
   display: block;
-  font-size: 0.8rem;
-  color: var(--burgundy);
-}
-.nameplate span {
-  font-size: 0.65rem;
-  color: var(--warm-brown);
-}
-
-/* Foreground Floor */
-.cafe-floor-foreground {
-  position: relative;
-  z-index: 2;
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-
-.cat-bed {
-  background: rgba(89, 69, 60, 0.3);
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-}
-
-/* Modal Popup Window */
-.modal-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(59, 43, 36, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-}
-
-.modal-box {
-  background: var(--antique-cream);
-  border: 4px solid var(--antique-gold);
-  border-radius: 12px;
-  width: 320px;
-  padding: 1.5rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid var(--antique-gold);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.modal-header h2 {
-  font-size: 1.1rem;
-  color: var(--burgundy);
-  margin: 0;
-}
-
-.close-modal-btn {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--warm-brown);
-}
-
-.modal-body {
-  font-size: 0.9rem;
-  color: var(--warm-brown);
-  line-height: 1.4;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
 }
